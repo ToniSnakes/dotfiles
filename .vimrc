@@ -51,10 +51,10 @@ nnoremap <F10> :wq <CR>
 inoremap <F3> <ESC> :q! <CR>
 nnoremap <F3> :q! <CR>
 
-inoremap <F7> <ESC> :tabp <CR>
-nnoremap <F7> :tabp <CR>
-inoremap <F8> <ESC> :tabn <CR>
-nnoremap <F8> :tabn <CR>
+inoremap <F7> <ESC> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run % <CR>
+nnoremap <F7> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run % <CR>
+inoremap <F8> <ESC> :w <CR> :!python3 % <CR>
+nnoremap <F8> :w <CR> :!python3 % <CR>
 
 inoremap <F2> <ESC> :write <CR> :!php % <CR>
 nnoremap <F2> :write <CR> :!php % <CR>
@@ -62,7 +62,9 @@ nnoremap <F2> :write <CR> :!php % <CR>
 inoremap <F4> <ESC> :w <CR> a
 nnoremap <F4> :w <CR>
 
-inoremap { {<CR>d<CR>}<up><right><right><BS>
+nnoremap <F9> i// file: <C-R>% <CR>// author: Antonio-Ionut Boar (email: a.boar@student.rug.nl) <CR>// date: <C-R>=strftime("%a %d %b %Y")<CR> <CR>// version: 1.0 <CR><CR>// Description: 
+
+" inoremap { {<CR>d<CR>}<up><right><right><BS>
 " inoremap ( ()<left>
 " inoremap [ []<left>
 " inoremap " ""<left>
