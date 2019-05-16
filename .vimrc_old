@@ -1,9 +1,9 @@
 set exrc
 set secure
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set noexpandtab
 set autoindent
 set cindent
@@ -12,20 +12,11 @@ set number
 "set mousefocus
 set relativenumber
 inoremap <CR> <CR>d<BS>
-inoremap # <Tab><BS>#
-map <C-n> :NERDTreeToggle<CR>
-map <C-i> ysiw
-
-set rtp+=/usr/local/opt/fzf
-map <C-p> :Files<CR>
-map <C-f> :Ag<CR>
-
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 syntax on
 "colorscheme monokai
-"colorscheme peachpuff
-colorscheme alduin
+colorscheme peachpuff
+"colorscheme alduin
 let g:solorized_termcolors=256
 set t_Co=256
 let g:cpp_class_scope_highlight = 1
@@ -60,13 +51,13 @@ nnoremap <F10> :wq <CR>
 inoremap <F3> <ESC> :q! <CR>
 nnoremap <F3> :q! <CR>
 
-inoremap <F7> <ESC> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run *.c <CR>
-nnoremap <F7> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run *.c <CR>
+inoremap <F7> <ESC> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run % <CR>
+nnoremap <F7> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run % <CR>
 inoremap <F8> <ESC> :w <CR> :!python3 % <CR>
 nnoremap <F8> :w <CR> :!python3 % <CR>
 
-inoremap <F2> <ESC> :write <CR> :!ruby % <CR>
-nnoremap <F2> :write <CR> :!ruby % <CR>
+inoremap <F2> <ESC> :write <CR> :!php % <CR>
+nnoremap <F2> :write <CR> :!php % <CR>
 
 inoremap <F4> <ESC> :w <CR> a
 nnoremap <F4> :w <CR>
@@ -78,5 +69,3 @@ nnoremap <F9> i// file: <C-R>% <CR>// author: Antonio-Ionut Boar (email: a.boar@
 " inoremap [ []<left>
 " inoremap " ""<left>
 " inoremap ' ''<left>
-execute pathogen#infect()
-call pathogen#helptags()
