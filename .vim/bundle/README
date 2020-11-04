@@ -1,0 +1,8 @@
+To make the plugins work, download these repositories in this folder:
+fzf
+fzf.vim
+nerdtree
+
+Also, install the_silver_searcher on your machine
+sudo apt-get install silversearcher-ag
+
