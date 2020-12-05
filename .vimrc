@@ -1,12 +1,13 @@
 set exrc
 set secure
 
-set tabstop=2
+set tabstop=4
 set softtabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 set autoindent
-set cindent
+set smarttab
+"set cindent
 set number
 "set mouse=a
 "set mousefocus
@@ -16,10 +17,11 @@ inoremap # <Tab><BS>#
 map <C-n> :NERDTreeToggle<CR>
 map <C-i> ysiw
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/bin/fzf
 map <C-p> :Files<CR>
 map <C-f> :Ag<CR>
 
+"let $FZF_DEFAULT_COMMAND = 'ag --nogroup --nocolor --column --hidden'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 syntax on
@@ -57,21 +59,26 @@ inoremap <F6> <ESC> :!./run <CR>
 nnoremap <F6> :!./run <CR>
 inoremap <F10> <ESC> :wq <CR>
 nnoremap <F10> :wq <CR>
-inoremap <F3> <ESC> :q! <CR>
-nnoremap <F3> :q! <CR>
 
 inoremap <F7> <ESC> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run *.c <CR>
 nnoremap <F7> :w <CR> :!gcc -std=c99 -Wall -pedantic -o run *.c <CR>
 inoremap <F8> <ESC> :w <CR> :!python3 % <CR>
 nnoremap <F8> :w <CR> :!python3 % <CR>
 
-inoremap <F2> <ESC> :write <CR> :!ruby % <CR>
-nnoremap <F2> :write <CR> :!ruby % <CR>
+inoremap <F2> <ESC> :write <CR> :!ansible-playbook % -i ../hosts.yml -u antonio <CR>
+nnoremap <F2> :write <CR> :!ansible-playbook % -i ../hosts.yml -u antonio <CR>
+inoremap <F3> <ESC> :write <CR> :!ansible-playbook % -i ../hosts.yml -u antonio --extra-vars "ansible_sudo_pass=asdf;lkj" <CR>
+nnoremap <F3> :write <CR> :!ansible-playbook % -i ../hosts.yml -u antonio --extra-vars "ansible_sudo_pass=asdf;lkj" <CR>
 
 inoremap <F4> <ESC> :w <CR> a
 nnoremap <F4> :w <CR>
 
 nnoremap <F9> i// file: <C-R>% <CR>// author: Antonio-Ionut Boar (email: a.boar@student.rug.nl) <CR>// date: <C-R>=strftime("%a %d %b %Y")<CR> <CR>// version: 1.0 <CR><CR>// Description: 
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
 
 " inoremap { {<CR>d<CR>}<up><right><right><BS>
 " inoremap ( ()<left>
