@@ -194,5 +194,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export MAVEN_HOME=$HOME/maven/apache-maven-3.8.6
 export PATH=$PATH:$MAVEN_HOME/bin
 
+# Start ssh-agent and add keys
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
