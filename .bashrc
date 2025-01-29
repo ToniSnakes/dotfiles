@@ -125,9 +125,6 @@ complete -F __start_kubectl k
 # do
 #   export KUBECONFIG=$KUBECONFIG:$f
 # done
-#export KUBECONFIG=~/.kube/config_circinus_bxd_admin
-#export KUBECONFIG=~/.kube/config_tucana_admin
-export KUBECONFIG=~/.kube/config_toni_tucana:~/.kube/config_toni_centaurus:~/.kube/config_toni_circinus:~/.kube/config_toni_playground:~/.kube/config_anon_tucana:~/.kube/raspi_config:~/.kube/config_toni_datascience:~/.kube/config_toni_admincluster
 # export PS1="\e[34m(`k config current-context`)$PS1"
 #alias k-switch=". k-switch"
 
@@ -196,3 +193,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Add Maven to PATH
 export MAVEN_HOME=$HOME/maven/apache-maven-3.8.6
 export PATH=$PATH:$MAVEN_HOME/bin
+
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
