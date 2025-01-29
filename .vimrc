@@ -24,7 +24,12 @@ map <C-p> :Files<CR>
 map <C-f> :Ag<CR>
 
 "let $FZF_DEFAULT_COMMAND = 'ag --nogroup --nocolor --column --hidden'
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
+
+"command! -bang -nargs=* Agc call fzf#vim#grep('ag  --nogroup --column --filename --color -- '.shellescape(empty(<q-args>) ? '^(?=.)' : <q-args>) .. ' ' .. shellescape(expand('%:p')) .. ' /dev/null 2>/dev/null', fzf#vim#with_preview(), <bang>0)
+
+let g:fzf_preview_window = ['right:50%', 'ctrl-_']
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--nogroup --color --column --hidden --filename', fzf#vim#with_preview(), <bang>0)
 
 syntax on
 "colorscheme monokai
