@@ -1,6 +1,3 @@
-# This file requires the Starship prompt manager installed and at least
-# one NerdFont to work. Then it needs to be placed under ~/.config/starship.toml
-
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
