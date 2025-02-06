@@ -197,3 +197,14 @@ export PATH=$PATH:$MAVEN_HOME/bin
 # Start ssh-agent and add keys
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
+
+# Starship cmd
+eval "$(starship init bash)"
+
+# Terraform tab complete
+alias t=terraform
+complete -C /usr/bin/terraform terraform
+
+# WSL specific: use wslview from wslu to open files/browser
+# for images, still throws error, but works: xdg-open
+export BROWSER=wslview
